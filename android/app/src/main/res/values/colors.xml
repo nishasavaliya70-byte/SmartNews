@@ -1,0 +1,10 @@
+<resources>
+    <color name="primary_navy">#101C36</color>
+    <color name="secondary_blue">#356AE6</color>
+    <color name="accent_cyan">#00C2D6</color>
+    <color name="light_bg">#F5F7FB</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="primary_text">#1A1D20</color>
+    <color name="dark_bg">#0B1220</color>
+    <color name="dark_card">#172235</color>
+</resources>

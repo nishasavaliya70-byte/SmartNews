@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: smartnews_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: smartnews_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - smartnews_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d smartnews_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smartnews_fastapi
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      - PROJECT_NAME=SmartNews AI Backend
+      - POSTGRES_SERVER=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgrespassword
+      - POSTGRES_DB=smartnews_db
+      - SECRET_KEY=production_secret_key_smartnews_ai_2026
+      - GNEWS_API_KEY=${GNEWS_API_KEY}
+    command: >
+      sh -c "alembic upgrade head &&
+             python -m app.ml.train &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8000"
+
+volumes:
+  smartnews_pgdata:

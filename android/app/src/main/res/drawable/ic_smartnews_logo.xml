@@ -1,0 +1,34 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Outer Shield / Newspaper Rounded Frame -->
+    <path
+        android:fillColor="#101C36"
+        android:pathData="M20,24 C20,17.37 25.37,12 32,12 L88,12 C94.63,12 100,17.37 100,24 L100,96 C100,102.63 94.63,108 88,108 L32,108 C25.37,108 20,102.63 20,96 Z" />
+    
+    <!-- Accent Gradient Line or Fold -->
+    <path
+        android:fillColor="#356AE6"
+        android:pathData="M32,24 L88,24 C90.2,24 92,25.8 92,28 L92,44 L28,44 L28,28 C28,25.8 29.8,24 32,24 Z" />
+
+    <!-- AI Sparkle / Neural node icon in Cyan -->
+    <path
+        android:fillColor="#00C2D6"
+        android:pathData="M60,26 L63,33 L70,36 L63,39 L60,46 L57,39 L50,36 L57,33 Z" />
+
+    <!-- Newspaper content simulated lines -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,54 L88,54 A3,3 0 0,1 88,60 L32,60 A3,3 0 0,1 32,54 Z" />
+    <path
+        android:fillColor="#8EA1C0"
+        android:pathData="M32,66 L88,66 A2.5,2.5 0 0,1 88,71 L32,71 A2.5,2.5 0 0,1 32,66 Z" />
+    <path
+        android:fillColor="#8EA1C0"
+        android:pathData="M32,77 L76,77 A2.5,2.5 0 0,1 76,82 L32,82 A2.5,2.5 0 0,1 32,77 Z" />
+    <path
+        android:fillColor="#00C2D6"
+        android:pathData="M32,88 L58,88 A2.5,2.5 0 0,1 58,93 L32,93 A2.5,2.5 0 0,1 32,88 Z" />
+</vector>
